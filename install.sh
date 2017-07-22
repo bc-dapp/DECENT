@@ -19,41 +19,45 @@ init () {
 #run decent with flag
 run () {
     ./scripts/decent_run.sh run
+    exit
 }
 
-scriptsDir="scripts"
+install () {
+    scriptsDir="scripts"
 
-# Prerequisites
-echo "Installing prerequisites..."
-chmod +x $scriptsDir/prereq.sh
-./$scriptsDir/prereq.sh
+    # Prerequisites
+    echo "Installing prerequisites..."
+    chmod +x $scriptsDir/prereq.sh
+    ./$scriptsDir/prereq.sh
 
- Boost Library
-echo "Installing Boost..."
-BOOST_ROOT="~/opt/boost_1_60_0"
+     Boost Library
+    echo "Installing Boost..."
+    BOOST_ROOT="~/opt/boost_1_60_0"
 
-if [ ! -d "$BOOST_ROOT" ]; then
-    chmod +x $scriptsDir/boost_install.sh 
-    ./$scriptsDir/boost_install.sh
-fi
+    if [ ! -d "$BOOST_ROOT" ]; then
+        chmod +x $scriptsDir/boost_install.sh 
+        ./$scriptsDir/boost_install.sh
+    fi
 
-## For generatking keys and config
-echo "Generating config file..."
-chmod +x $scriptsDir/gen_config.sh
-./$scriptsDir/gen_config.sh
+    ## For generatking keys and config
+    echo "Generating config file..."
+    chmod +x $scriptsDir/gen_config.sh
+    ./$scriptsDir/gen_config.sh
 
-## For generating the genesis file. 
-echo "Generating genesis..."
-chmod +x $scriptsDir/gen_genesis.sh
-./$scriptsDir/gen_genesis.sh
+    ## For generating the genesis file. 
+    echo "Generating genesis..."
+    chmod +x $scriptsDir/gen_genesis.sh
+    ./$scriptsDir/gen_genesis.sh
 
-chmod +x $scriptsDir/decent_install.sh
-./$scriptsDir/decent_install.sh
+    chmod +x $scriptsDir/decent_install.sh
+    ./$scriptsDir/decent_install.sh
 
-chmod +x $scriptsDir/decent_run.sh
-echo -e "\n\nInitializing ....\n\n"
-init
-echo -e "\n\nRunning...\n\n"
-run
+    chmod +x $scriptsDir/decent_run.sh
+    echo -e "\n\nInitializing ....\n\n"
+    init
+    #echo -e "\n\nRunning...\n\n"
+    #run
+
+}
 
 $@
