@@ -2,12 +2,11 @@
 
 Majority of instructions taken from [DECENTNetwork's GitHub](https://github.com/DECENTfoundation/DECENT-Network)
 
-
-**** WIP ****
-
 Run `install.sh` and it should run all the commands and build. Note that this may take some time. (~30 mins to 1 hour).
 
-**** WIP ****
+It should run the whole thing as well. 
+
+** YOU MUST HAVE Ubuntu 16.04 FOR THIS TO WORK **
 
 # Building for DECENT Private chain
 
